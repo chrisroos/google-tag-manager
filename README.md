@@ -1,13 +1,13 @@
 Demonstrating how Google Tag Manager works.
 
-## Examples
+## Using Data Layer
 
 * [GTM](gtm.html)
 * [GTM using event callback](gtm-using-event-callback.html)
 
-## Google Tag Manager configuration
+### GTM configuration
 
-### Variables
+#### Variables
 
 * GA Settings
   * Variable type: Google Analytics settings
@@ -20,7 +20,7 @@ Demonstrating how Google Tag Manager works.
   * Variable type: Data Layer Variable
   * Data Layer Variable Name: ecommerce.checkout.actionField.step
 
-### Triggers
+#### Triggers
 
 * Checkout step 1
   * Trigger type: Custom Event
@@ -30,7 +30,7 @@ Demonstrating how Google Tag Manager works.
     * equals
     * 1
 
-### Tags
+#### Tags
 
 * GA Checkout step 1
   * Tag Configuration
