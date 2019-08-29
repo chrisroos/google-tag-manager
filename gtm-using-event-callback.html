@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TMLGSFD');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Testing Google Tag Manager</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script>
+      $(function() {
+        $('.js-gtm-track').click(function(e) {
+          var element = e.target;
+
+          var currencyCode = element.getAttribute('data-gtm-currency-code');
+          var checkoutStep = element.getAttribute('data-gtm-step');
+          var productName = element.getAttribute('data-gtm-product-name');
+          var productId = element.getAttribute('data-gtm-product-id');
+          var productPrice = element.getAttribute('data-gtm-product-price');
+          var productBrand = element.getAttribute('data-gtm-product-brand');
+          var productCategory = element.getAttribute('data-gtm-product-category');
+
+          // https://developers.google.com/tag-manager/enhanced-ecommerce#checkoutstep
+          var gtmEvent = {
+            event: 'checkout',
+            ecommerce: {
+              currencyCode: currencyCode,
+              checkout: {
+                actionField: {
+                  step: parseInt(checkoutStep, 10),
+                },
+                products: [{
+                  name: productName,
+                  id: productId,
+                  price: productPrice,
+                  brand: productBrand,
+                  category: productCategory,
+                  variant: '',
+                }],
+              },
+            }
+          };
+
+          dataLayer.push(gtmEvent);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMLGSFD"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <h1>Testing Google Tag Manager</h1>
+
+    <p>This example demonstrates how to use the GTM Data Layer to send an <a href="https://developers.google.com/tag-manager/enhanced-ecommerce#checkout">Enhanced Ecommerce checkout event</a> when a product link is clicked.</p>
+
+    <p>Decorate the product link with data attributes containing information required by the ecommerce checkout event.</p>
+
+    <p>Use jQuery to attach a function to the click event of the link. This function extracts the information from the data-* attributes, uses it to construct a GTM ecommerce checkout event and adds the event to the data layer.</p>
+
+    <p>There are no guarantees that the event will be sent to GTM before the browser navigates to the target of the link.</p>
+
+
+    <p>
+      <a href="http://example.com"
+         class="js-gtm-track"
+         data-gtm-currency-code="GBP"
+         data-gtm-step="1"
+         data-gtm-product-name="product-name"
+         data-gtm-product-id="product-id"
+         data-gtm-product-price="0.00"
+         data-gtm-product-brand="product-brand"
+         data-gtm-product-category="product-category">
+        Link to product page
+      </a>
+    </p>
+
+    <h2>Google Tag Manager setup</h2>
+
+    <pre>
+## Variables
+
+* GA Settings
+  * Variable type: Google Analytics settings
+  * Tracking ID: &lt;Google Analytics tracking ID&gt;
+  * More Settings
+    * Ecommerce
+      * Enabled Enhanced Ecommerce Features
+        * Use data layer
+* Ecommerce checkout step
+  * Variable type: Data Layer Variable
+  * Data Layer Variable Name: ecommerce.checkout.actionField.step
+
+## Triggers
+
+* Checkout step 1
+  * Trigger type: Custom Event
+  * Event name: checkout
+  * This trigger fires on: Some Custom Events
+    * Ecommerce checkout step
+    * equals
+    * 1
+
+## Tags
+
+* GA Checkout step 1
+  * Tag Configuration
+    * Tag Type: Google Analytics: Universal Analytics
+    * Track Type: Pageview
+    * Google Analytics Settings: {{GA Settings}}
+  * Triggering
+    * Checkout step 1
+    </pre>
+  </body>
+</html>
