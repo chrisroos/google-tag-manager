@@ -14,6 +14,8 @@
     <script>
       $(function() {
         $('.js-gtm-track').click(function(e) {
+          e.preventDefault();
+
           var element = e.target;
 
           var currencyCode = element.getAttribute('data-gtm-currency-code');
@@ -42,6 +44,9 @@
                   variant: '',
                 }],
               },
+            },
+            eventCallback: function() {
+              document.location = element.href;
             }
           };
 
