@@ -15,6 +15,14 @@
   * Con: Breaks the use of cmd+click to open the link in a new window
   * Con: Possible bad user experience - a delay communicating with GTM causing a delay for the user opening the link
 
+### How it works
+
+* We use jQuery to attach an event handler to the click event of elements with the `js-gtm-track` class
+* This event handler constructs an `ecommerce` shaped checkout event object using the values from the data-\* attributes on the element that was clicked, and pushes this checkout event onto the Data Layer.
+* The `Checkout step 1` trigger is fired when the `checkout` step 1 event is seen in the Data Layer
+* The `GA Checkout step 1` Tag sends the content of `ecommerce` in the Data Layer to GA when `Checkout step 1` fires
+* In the event callback variant, we prevent the default link behaviour (using `e.preventDefault()`) and instead pass an `eventCallback` function along with the event which GTM invokes once the data has been received.
+
 ### GTM configuration
 
 #### Variables
