@@ -1,6 +1,18 @@
 # GTM Enhanced Ecommerce
 
+This README and the associated HTML pages demonstrate different ways of enabling the Enhanced ecommerce in Google Tag Manager.
+
+To use the examples you'll need to:
+
+1. Create a Google Tag Manager account
+2. Configure a Container in GTM
+3. Update the GTM snippets in the HTML pages to use your Container
+4. Configure GTM by following the instructions below
+5. Enable Preview mode in GTM to test the effect of the configuration in GTM
+
 [View this on GitHub pages](https://chrisroos.github.io/google-tag-manager/) for the links to work as expected.
+
+---
 
 ## Using Data Layer
 
