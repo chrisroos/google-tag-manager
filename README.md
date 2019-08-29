@@ -4,7 +4,9 @@
 
 ## Using Data Layer
 
-* [GTM](gtm.html)
+* Pro: Recommended way of integrating with GTM
+
+* [GTM without waiting for GTM](gtm.html)
   * Pro: No impact of user experience
   * Con: Possibility of dropped events if page unloads before event sent to GTM
 
