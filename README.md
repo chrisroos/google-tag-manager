@@ -46,9 +46,21 @@
   * Triggering
     * Checkout step 1
 
+---
+
 ## Using Custom JavaScript Macro
 
 * [GTM using Custom JavaScript Macro](gtm-using-custom-js-macro.html)
+  * Pro: Reduces developer effort required to that of adding data-\* attributes containing information required for the checkout
+  * Con: Might become hard to manage in GTM
+
+### How it works
+
+* GTM listens for click events on elements that have the 'js-gtm-product' class.
+* The `gtm.click` event populates the `gtm.element` with the object that's been clicked (the product link in our case).
+* The `GTM Checkout XXX` variables use the `gtm.element` to read the various data-\* attributes.
+* The `Ecommerce checkout step` variable returns a JavaScript object in the correct shape to represent a Checkout event. This object contains the values in the various `GTM Checkout XXX` variables.
+* The `GA Ecommerce Checkout` Tag sends the data from `Ecommerce checkout step` to GA when the `Product link click` event is fired.
 
 ### GTM Configuration
 
@@ -80,7 +92,7 @@
   * Data Layer Variable Name: gtm.element.data.gtmProductPrice
 * Ecommerce checkout step
   * Variable Type: Custom JavaScript
-  * Customer JavaScript:
+  * Custom JavaScript:
     ```
     function() {
       var ecommerceData = {
