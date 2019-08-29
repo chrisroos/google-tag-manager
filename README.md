@@ -53,6 +53,8 @@
 * [GTM using Custom JavaScript Macro](gtm-using-custom-js-macro.html)
   * Pro: Reduces developer effort required to that of adding data-\* attributes containing information required for the checkout
   * Con: Might become hard to manage in GTM
+  * Con: It's not clear how, or even if, this approach will continue to work for all Ecommerce functionality we want to support
+  * Con: It's not the recommended way of integrating with GTM (using the Data Layer is).
 
 ### How it works
 
