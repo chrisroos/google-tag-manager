@@ -1,5 +1,7 @@
 # GTM Enhanced Ecommerce
 
+[View this on GitHub pages](https://chrisroos.github.io/google-tag-manager/) for the links to work as expected.
+
 ## Using Data Layer
 
 * [GTM](gtm.html)
