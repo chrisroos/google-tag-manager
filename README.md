@@ -156,12 +156,14 @@ To use the examples you'll need to:
 #### Tags
 
 * GA Ecommerce checkout
-  * Tag type: Google Analytics: Universal Analytics
-  * Track Type: Event
-  * Event Category: Ecommerce
-  * Event Action: Checkout
-  * Google Analytics Settings: {{GA Settings}}
-  * Enable overriding settings in this tag
-  * Ecommerce > Enable Enhanced Ecommerce features: True
-  * Read Data from Variable: {{Ecommerce checkout step}}
-
+  * Tag Configuration
+    * Tag type: Google Analytics: Universal Analytics
+    * Track Type: Event
+    * Event Category: Ecommerce
+    * Event Action: Checkout
+    * Google Analytics Settings: {{GA Settings}}
+    * Enable overriding settings in this tag
+    * Ecommerce > Enable Enhanced Ecommerce features: True
+    * Read Data from Variable: {{Ecommerce checkout step}}
+  * Triggering
+    * Product link click
